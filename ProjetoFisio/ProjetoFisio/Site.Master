@@ -7,19 +7,44 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Meu aplicativo ASP.NET</title>
+
+    <title><%: Page.Title %> - Atender bem para atender sempre</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/jsBefore") %>
         <%: Scripts.Render("~/bundles/jsExterno") %>
         <%: Scripts.Render("~/bundles/modernizr") %>
         <%: Scripts.Render("~/bundles/jsLast") %>
     </asp:PlaceHolder>
-
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><i class="flaticon-pharmacy"></i><span>Re</span>Medic</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span>Menu
+     
+                </button>
+
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="departments.html" class="nav-link">Departments</a></li>
+                        <li class="nav-item"><a href="doctor.html" class="nav-link">Doctors</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalAppointment"><span>Make an Appointment</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+    </header>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -41,14 +66,135 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container body-content">
+        <div class="container-fluid body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Meu aplicativo ASP.NET</p>
+
+            <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
+
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row mb-5">
+                        <div class="col-md">
+                            <div class="ftco-footer-widget mb-4">
+                                <h2 class="ftco-heading-2">Fisioterapeuta Dannieli Pereira</h2>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                    <li <%--class="ftco-animate"--%>><a href="https://www.facebook.com/fisiodannieli/" target="_blank"><span class="icon-facebook"></span></a></li>
+                                    <li <%--class="ftco-animate"--%>><a href="https://www.instagram.com/fisiodannieli/" target="_blank"><span class="icon-instagram"></span></a></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="ftco-footer-widget mb-4 ml-md-5">
+                                <h2 class="ftco-heading-2">Informações</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="py-2 d-block">Appointments</a></li>
+                                    <li><a href="#" class="py-2 d-block">Suas especialidades</a></li>
+                                    <li><a href="#" class="py-2 d-block">Como localizar</a></li>
+                                    <li><a href="#" class="py-2 d-block">Seus serviços</a></li>
+                                    <li><a href="#" class="py-2 d-block">Dicas de saúde</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="ftco-footer-widget mb-4">
+                                <h2 class="ftco-heading-2">Site Links</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="py-2 d-block">Home</a></li>
+                                    <li><a href="#" class="py-2 d-block">About</a></li>
+                                    <li><a href="#" class="py-2 d-block">Departments</a></li>
+                                    <li><a href="#" class="py-2 d-block">Doctors</a></li>
+                                    <li><a href="#" class="py-2 d-block">Blog</a></li>
+                                    <li><a href="#" class="py-2 d-block">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="ftco-footer-widget mb-4">
+                                <h2 class="ftco-heading-2">Alguma pergunta?</h2>
+                                <div class="block-23 mb-3">
+                                    <ul>
+                                        <li><span class="icon icon-map-marker"></span><span class="text">Rua Almirante Lucas Boiteaux, 54. Estreito, Florianópolis, SC, BR</span></li>
+                                        <li><a href="#"><span class="icon icon-phone"></span><span class="text">+55 48 9 84640906</span></a></li>
+                                        <li><a href="#"><span class="icon icon-phone"></span><span class="text">+55 48 32070837</span></a></li>
+                                        <li><a href="#"><span class="icon icon-envelope"></span><span class="text">dannieli.fisio@gmail.com</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p><%: DateTime.Now.Year %> - 
+                                <a href="https://www.developerti.com.br" target="_blank">DeveloperTI
+                                    <i class="icon-heart" aria-hidden="true"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
+
+        <!-- loader -->
+        <%--<div id="ftco-loader" class="show fullscreen">
+            <svg class="circular" width="48px" height="48px">
+                <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+                <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+            </svg>
+        </div>--%>
     </form>
+    <!-- Modal -->
+    <div class="modal fade" id="modalAppointment" tabindex="-1" role="dialog" aria-labelledby="modalAppointmentLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAppointmentLabel">Fale comigo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="appointment_name" class="text-black">Nome completo</label>
+                            <input type="text" class="form-control" id="appointment_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment_email" class="text-black">Email</label>
+                            <input type="text" class="form-control" id="appointment_email">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="appointment_date" class="text-black">Data</label>
+                                    <input type="text" class="form-control" id="appointment_date">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="appointment_time" class="text-black">Hora</label>
+                                    <input type="text" class="form-control" id="appointment_time">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="appointment_message" class="text-black">Mensagem</label>
+                            <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Message" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
